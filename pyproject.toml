@@ -1,9 +1,12 @@
-[tool.poetry]
-name = "release-semantic-commit"
+[project]
+name = "meu-projeto-python"
 version = "0.1.0"
-description = "Projeto Python com commits semânticos e release automático"
-authors = ["Rauni <raunifabricio10@gmail.com>"]
-license = "MIT"
+description = "Projeto Python com versionamento semântico"
+authors = [
+  { name="Rauni Fabricio", email="raunifabricio10@gmail.com" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.11"
 
 [tool.commitizen]
 name = "cz_conventional_commits"
@@ -12,12 +15,10 @@ tag_format = "v$version"
 
 [tool.black]
 line-length = 88
-target-version = ["py311"]
 
 [tool.isort]
 profile = "black"
 
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
-
