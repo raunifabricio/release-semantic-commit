@@ -1,5 +1,5 @@
 [project]
-name = "meu-projeto-python"
+name = "release-semantic-commit"
 version = "0.1.0"
 description = "Projeto Python com versionamento semântico"
 authors = [
