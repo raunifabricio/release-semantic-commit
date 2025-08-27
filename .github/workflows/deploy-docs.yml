@@ -1,22 +1,33 @@
-name: Deploy Docs
+# .github/workflows/deploy_docs.yml
+name: Deploy MkDocs
 
 on:
   push:
     branches: [main]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-      - name: Deploy to GitHub Pages
+          pip install commitizen mkdocs
+
+      - name: Generate Changelog and Update Docs
         run: |
-          mkdocs gh-deploy --force
+          cz changelog
+          python scripts/update_index.py
+
+      - name: Build and Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./site
