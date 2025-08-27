@@ -1,5 +1,3 @@
+# main.py
 def hello():
-    print("Olá, mundo!")
-
-if __name__ == "__main__":
-    hello()
+    print("Olá, mundo com versão 0.1.0!")
