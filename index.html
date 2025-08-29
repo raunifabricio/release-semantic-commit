@@ -52,35 +52,35 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
-            
-            <li class="nav-item" data-bs-level="1"><a href="#update_indexpy" class="nav-link">update_index.py</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="update_indexpy">update_index.py</h1>
-<p>import re</p>
-<p>with open('CHANGELOG.md', 'r', encoding='utf-8') as f:
+<p>import re
+import os</p>
+<p>changelog_path = 'CHANGELOG.md'
+index_path = 'docs/index.md'</p>
+<p>if not os.path.isfile(changelog_path):
+    print("🚨 CHANGELOG.md não encontrado!")
+    exit(1)</p>
+<p>with open(changelog_path, 'r', encoding='utf‑8') as f:
     changelog = f.read()</p>
-<p>def extract_section(text, section_title):
-    pattern = rf'(## .<em>{section_title}.</em>?)(?=\n## |\Z)'
+<p>def extract_section(text, section_keyword):
+    pattern = rf'(## .<em>{section_keyword}.</em>?)(?=\n## |\Z)'
     match = re.search(pattern, text, re.DOTALL | re.IGNORECASE)
     return match.group(1).strip() if match else ''</p>
 <p>melhorias = extract_section(changelog, "Melhorias")
 correcoes = extract_section(changelog, "Correções")
 alteracoes = extract_section(changelog, "Alterações Técnicas")</p>
-<p>header = "# Bem-vindo à Documentação\n\nAqui estão as últimas atualizações:\n\n"</p>
-<p>content = header
-for section in [melhorias, correcoes, alteracoes]:
-    if section:
-        content += section + "\n\n"</p>
-<p>with open('docs/index.md', 'w', encoding='utf-8') as f:
+<p>header = "# Bem‑vindo à Documentação\n\nAqui estão as últimas atualizações:\n\n"</p>
+<p>content = header \
+    + (melhorias + "\n\n" if melhorias else "") \
+    + (correcoes + "\n\n" if correcoes else "") \
+    + (alteracoes + "\n\n" if alteracoes else "")</p>
+<p>with open(index_path, 'w', encoding='utf‑8') as f:
     f.write(content)</p>
-<p>print("docs/index.md atualizado!")</p></div>
+<p>print("docs/index.md atualizado com seções do changelog!")</p></div>
             </div>
         </div>
 
@@ -162,5 +162,5 @@ for section in [melhorias, correcoes, alteracoes]:
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-08-29 20:44:29.017654+00:00
+Build Date UTC : 2025-08-29 20:56:41.844061+00:00
 -->
