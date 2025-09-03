@@ -6,18 +6,22 @@ theme:
   name: material
   language: pt
   palette:
-  - scheme: default
-    primary: teal
-    accent: cyan
-  - scheme: slate
-    primary: teal
-    accent: cyan
+    - scheme: default
+      primary: indigo
+      accent: indigo
+    - scheme: slate
+      primary: indigo
+      accent: indigo
   font:
     text: Roboto
     code: Roboto Mono
   features:
-  - navigation.instant
-  - navigation.tabs
+    - navigation.instant
+    - navigation.tabs
+    - toc.integrate
+    - header.autohide
+    - content.code.annotate
+    - content.tabs.link
   icon:
     repo: fontawesome/brands/github
 
@@ -25,10 +29,6 @@ repo_url: https://github.com/raunifabricio/release-semantic-commit
 repo_name: GitHub
 
 nav:
-  - Home: index.md
-  - Guia de Uso:
-      - Instalação: docs/instalacao.md
-      - Como Usar: docs/como_usar.md
   - Release Notes: release_notes.md
 
 plugins:
