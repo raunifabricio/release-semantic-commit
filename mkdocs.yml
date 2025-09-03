@@ -29,7 +29,7 @@ repo_url: https://github.com/raunifabricio/release-semantic-commit
 repo_name: GitHub
 
 nav:
-  - Release Notes: release_notes.md
+  - Release Notes: CHANGELOG.md
 
 plugins:
   - search
