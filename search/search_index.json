@@ -1,0 +1,1 @@
+{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[{"location":"","title":"Bem-vindo ao Meu Projeto de Release Semantic Commit","text":"<p>Este \u00e9 um projeto simples em Python com deploy autom\u00e1tico da documenta\u00e7\u00e3o via GitHub Pages.</p>"}]}
