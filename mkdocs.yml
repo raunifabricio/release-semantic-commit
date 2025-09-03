@@ -1,5 +1,37 @@
 site_name: Release Semantic Commit
-nav:
-  - Home: index.md
+site_description: Documentação oficial do meu projeto.
+site_url: https://raunifabricio.github.io/release-semantic-commit/
+
 theme:
   name: material
+  language: pt
+  palette:
+  - scheme: default
+    primary: teal
+    accent: cyan
+  - scheme: slate
+    primary: teal
+    accent: cyan
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+  - navigation.instant
+  - navigation.tabs
+  icon:
+    repo: fontawesome/brands/github
+
+repo_url: https://github.com/raunifabricio/release-semantic-commit
+repo_name: GitHub
+
+nav:
+  - Home: index.md
+  - Guia de Uso:
+      - Instalação: docs/instalacao.md
+      - Como Usar: docs/como_usar.md
+  - Release Notes: release_notes.md
+
+plugins:
+  - search
+  - git-revision-date-localized
+
