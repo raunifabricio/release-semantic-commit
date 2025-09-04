@@ -1,3 +1,6 @@
-# Bem-vindo ao Release Semantic Commit
+# Bem-vindo ao Projeto
 
-Este é um projeto simples em Python com deploy automático da documentação via GitHub Pages.
+Veja abaixo o changelog mais recente:
+
+[INCLUDE: docs/includes/updated_date.md]
+[INCLUDE: CHANGELOG.md]

@@ -29,9 +29,20 @@ repo_url: https://github.com/raunifabricio/release-semantic-commit
 repo_name: GitHub
 
 nav:
-  - Release Notes: changelog.md
+  - Home: changelog.md
 
 plugins:
   - search
-  - git-revision-date-localized
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+      enable_creation_date: false
+      type: date
+      locale: pt_BR
+      timezone: America/Sao_Paulo
+
+markdown_extensions:
+  - markdown_include.include:
+      base_path: .
+
+
 
